@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>List of posts</h1>
+    {% for post in posts %}
+    <p>{{post.id}} <br>
+        <a href="{% url 'post-details' pk=post.id %}">{{post.title}}</a> <br>
+        {% if post.image %}<img width="'200" height="200" src = "{{post.image.url}}"</p>{% endif %}
+    {% endfor %}
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nobis id facilis, in eveniet laudantium
+        inventore repellat obcaecati, et non doloribus temporibus necessitatibus veritatis ex dolores 
+        repudiandae quo reiciendis? Eius excepturi possimus eum veritatis culpa earum saepe quae natus 
+        repellendus aliquid impedit perspiciatis, ab similique nisi adipisci a nam sequi ipsum dignissimos
+        accusantium? Provident, earum sint? Delectus hic magni debitis asperiores doloremque voluptatum officiis! 
+        Esse iure repellat, incidunt alias autem omnis natus iusto, nesciunt inventore, nisi ducimus tempora ratione 
+        repellendus hic! Explicabo, dolorem eligendi quos consectetur deserunt voluptatum exercitationem non qui r
+        epudiandae ratione eveniet maxime fuga libero. Doloribus, libero ipsa. Consequatur vel provident 
+        perspiciatis quas qui maxime veniam beatae! Commodi sint error vel voluptas vero. 
+        Veritatis nisi error, ut ullam minima suscipit voluptates.</p>
+
+</body>
+</html>
