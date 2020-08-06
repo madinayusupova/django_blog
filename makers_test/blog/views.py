@@ -62,3 +62,6 @@ def delete_post(request, pk):
         post.delete()
         return redirect('home-page')
     return render(request, 'blog/delete_post.html')
+#
+# fbv function based views
+# cbv class based views

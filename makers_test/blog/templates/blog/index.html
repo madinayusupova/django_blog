@@ -1,19 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Our blog</title>
-</head>
-<body>
+
 {% extends 'includes/base.html' %}
 {% load static %}
 
 {% block body %}
 <h1>Our Shiny blog</h1>
+<!--{% for category in categories_list %}-->
+<!--<a href="{% url 'posts-list' %}?category={{category.slug}}">{{ category.name}}</a><br>-->
+<!--{% endfor %}-->
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+
+      <th scope="col">Category</th>
+      <th scope="col">Posts count</th>
+    </tr>
+  </thead>
+<tbody>
 {% for category in categories_list %}
-<!-- posts/?category=category_slug  -->
-<a href="{% url 'posts-list' %}?category={{category.slug}}">{{ category.name}}</a><br>
+<tr>
+    <td><a href="{% url 'posts-list' %}?category={{category.slug}}">{{ category.name}}</a></td>
+    <td>{{ category.posts.count }}</td>
+</tr>
 {% endfor %}
-{% endblock body %}
-</body>
-</html>
+</tbody>
+</table>{% endblock body %}
